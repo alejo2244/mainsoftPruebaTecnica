@@ -1,0 +1,38 @@
+
+<p *ngIf="!book"><em>Loading...</em></p>
+
+<div *ngIf="book">
+  <h3>Detalle</h3>
+
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <tbody>
+      <tr>
+        <td><strong>Titulo:</strong></td>
+        <td>{{book.title}}</td>
+      </tr>
+      <tr>
+        <td><strong>ISBN:</strong></td>
+        <td>{{book.isbn}}</td>
+      </tr>
+      <tr>
+        <td><strong>Nombre del autor:</strong></td>
+        <td>{{book.authorName}}</td>
+      </tr>
+      <tr>
+        <td><strong>Número de paginas:</strong></td>
+        <td>{{book.nPages}}</td>
+      </tr>
+      <tr>
+        <td><strong>Nombre de la editorial:</strong></td>
+        <td>{{book.editorialName}}</td>
+      </tr>
+      <tr>
+        <td><strong>Sinopsis:</strong></td>
+        <td>{{book.synopsis}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary" [routerLink]="['/']">Regresar</button>
+
+</div>

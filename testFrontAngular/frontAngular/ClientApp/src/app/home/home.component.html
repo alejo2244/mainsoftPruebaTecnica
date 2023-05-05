@@ -1,0 +1,25 @@
+<p>Bienvenido, esta es una lista de los libros disponibles actualmente.</p>
+
+<p *ngIf="!books"><em>Loading...</em></p>
+
+<div class="input-container">
+  <input type="text" class="form-control" [formControl]="searchControlTitle" placeholder="Buscar por título...">
+</div>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="books">
+  <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Detalle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.authorName }}</td>
+      <td><button class="btn btn-primary" [routerLink]="['/detail', book.isbn]">Ver Detalle</button></td>
+    </tr>
+  </tbody>
+</table>
